@@ -14,24 +14,16 @@ class Game(object):
         self.player = player.Player(sprites)
 
         while 1:
-            clock.tick(30)
+            dt = clock.tick(30)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # si la croix en haut à gauche de la fenêtre est cliquée
                     running = False # la boucle de jeu s'arrête
                     pygame.quit()
                     quit()
 
-            key = pygame.key.get_pressed()
-            if key[pygame.K_LEFT]: #si la touche flèche gauche est appuyée
-                image_x -= 10
-            if key[pygame.K_RIGHT]: #si la touche flèche droite est appuyée
-                image_x +=10
-            if key[pygame.K_UP]: #si la touche flèche haut est appuyée
-                image_y -= 10
-            if key[pygame.K_DOWN]: #si la touche flèche bas est appuyée
-                image_y +=10
 
-            sprites.update()
+
+            sprites.update(dt / 1000.)
             sprites.draw(screen)
             pygame.display.flip()
 
