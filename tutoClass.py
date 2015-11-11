@@ -19,15 +19,14 @@ class Game(object):
                 if event.type == pygame.KEYDOWN and event.key == pygame.ESCAPE: # si une touche plus la touche esc est préssée
                     running = False # la boucle de jeu s'arrête
 
-            image_x += 10
             key = pygame.key.get_pressed()
-            if key[pygame.K_LEFT]:
+            if key[pygame.K_LEFT]: #si la touche flèche gauche est appuyée
                 image_x -= 10
-            if key[pygame.K_RIGHT]:
+            if key[pygame.K_RIGHT]: #si la touche flèche droite est appuyée
                 image_x +=10
-            if key[pygame.K_UP]:
+            if key[pygame.K_UP]: #si la touche flèche haut est appuyée
                 image_y -= 10
-            if key[pygame.K_DOWN]:
+            if key[pygame.K_DOWN]: #si la touche flèche bas est appuyée
                 image_y +=10
 
             screen.fill((200, 200, 200))
