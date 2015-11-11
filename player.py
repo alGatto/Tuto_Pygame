@@ -22,5 +22,15 @@ class Player(pygame.sprite.Sprite):
         if key[pygame.K_DOWN]: #si la touche flèche bas est appuyée
             self.rect.y += 300 * dt
 
+        # Bloquer la sortie d'écran du perso
+        new = self.rect
         for cell in pygame.sprite.spritecollide(self, game.walls, False):
-            self.rect = last
+            cell = cell.rect
+            if last.right <= cell.left and new.right > cell.left:
+                new.right = cell.left
+            if last.left >= cell.right and new.left < cell.right:
+                new.left = cell.right
+            if last.bottom <= cell.top and new.bottom > cell.top:
+                new.bottom = cell.top
+            if last.top >= cell.bottom and new.top < cell.bottom:
+                new.top = cell.bottom
