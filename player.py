@@ -9,7 +9,9 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.image.load('ressources/Ducky-static.png') #charge l'image du personnage
         self.rect = pygame.rect.Rect((320,240), self.image.get_size())
 
-    def update(self, dt):
+    def update(self, dt, game):
+        last = self.rect.copy() #copie de la position
+
         key = pygame.key.get_pressed()
         if key[pygame.K_LEFT]: #si la touche flèche gauche est appuyée
             self.rect.x -= 300 * dt
@@ -19,3 +21,6 @@ class Player(pygame.sprite.Sprite):
             self.rect.y -= 300 * dt
         if key[pygame.K_DOWN]: #si la touche flèche bas est appuyée
             self.rect.y += 300 * dt
+
+        for cell in pygame.sprite.spritecollide(self, game.walls, False):
+            self.rect = last
