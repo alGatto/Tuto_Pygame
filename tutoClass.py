@@ -7,8 +7,7 @@ class Game(object):
     def main(self, screen):
         clock = pygame.time.Clock()
 
-        image_x = 320
-        image_y = 240
+        background =pygame.image.load('ressources/level1back.png')
 
         sprites = pygame.sprite.Group()
         self.player = player.Player(sprites)
@@ -24,10 +23,11 @@ class Game(object):
 
 
             sprites.update(dt / 1000.)
+            screen.blit(background, (0, 0))
             sprites.draw(screen)
             pygame.display.flip()
 
 if __name__ == '__main__':
     pygame.init()
-    screen = pygame.display.set_mode((640,480))
+    screen = pygame.display.set_mode((1024,683))
     Game().main(screen)
