@@ -1,23 +1,25 @@
 __author__ = 'alGatto'
 
 import pygame
+import player
 
 class Game(object):
-    def main(selfself, screen):
+    def main(self, screen):
         clock = pygame.time.Clock()
 
-        image = pygame.image.load('ressources/Ducky-static.png') #charge l'image du personnage
         image_x = 320
         image_y = 240
+
+        sprites = pygame.sprite.Group()
+        self.player = player.Player(sprites)
 
         while 1:
             clock.tick(30)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # si la croix en haut à gauche de la fenêtre est cliquée
                     running = False # la boucle de jeu s'arrête
-
-                if event.type == pygame.KEYDOWN and event.key == pygame.ESCAPE: # si une touche plus la touche esc est préssée
-                    running = False # la boucle de jeu s'arrête
+                    pygame.quit()
+                    quit()
 
             key = pygame.key.get_pressed()
             if key[pygame.K_LEFT]: #si la touche flèche gauche est appuyée
@@ -29,8 +31,8 @@ class Game(object):
             if key[pygame.K_DOWN]: #si la touche flèche bas est appuyée
                 image_y +=10
 
-            screen.fill((200, 200, 200))
-            screen.blit(image, (image_x, image_y))
+            sprites.update()
+            sprites.draw(screen)
             pygame.display.flip()
 
 if __name__ == '__main__':
