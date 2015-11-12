@@ -11,6 +11,7 @@ class Player(pygame.sprite.Sprite):
 
         self.resting = False
         self.dy = 0 #delta y
+        self.is_dead = False
 
     def update(self, dt, game):
         last = self.rect.copy() #copie de la position
@@ -20,6 +21,8 @@ class Player(pygame.sprite.Sprite):
             self.rect.x -= 300 * dt
         if key[pygame.K_RIGHT]: #si la touche flèche droite est appuyée
             self.rect.x += 300 * dt
+        if key[pygame.K_UP]:
+            self.rect.y -= 800 * dt
 
         #Gravité
         if self.resting and key[pygame.K_SPACE]:

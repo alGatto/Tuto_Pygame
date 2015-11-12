@@ -4,6 +4,7 @@ import pygame
 import player
 import tmx
 import pytmx
+import enemy
 
 
 class Game(object):
@@ -21,6 +22,11 @@ class Game(object):
         self.player = player.Player((start_cell.px, start_cell.py), self.sprites)
         self.tilemap.layers.append(self.sprites)
 
+        self.enemies = tmx.SpriteLayer()
+        for enemy in self.tilemap.layers['triggers'].find('enemy'):
+            enemy.Enemy((enemy.px, enemy.py), self.enemies)
+        self.tilemap.layers.append(self.enemies)
+
         while 1:
             dt = clock.tick(30)
             for event in pygame.event.get():
@@ -35,6 +41,10 @@ class Game(object):
             screen.blit(background, (0, 0)) # place le fond
             self.tilemap.draw(screen)
             pygame.display.flip()
+
+            if self.player.is_dead: #si le perso meurt
+                print('Perdu!') #afficher le message
+                return
 
 if __name__ == '__main__':
     pygame.init() #initialise pygame
