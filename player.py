@@ -32,15 +32,16 @@ class Player(pygame.sprite.Sprite):
         new = self.rect
         self.resting = False
         for cell in game.tilemap.layers['triggers'].collide(new, 'blockers'):
-            if last.right <= cell.left and new.right > cell.left:
+            blockers = cell['blockers']
+            if 'l' in blockers and last.right <= cell.left and new.right > cell.left:
                 new.right = cell.left
-            if last.left >= cell.right and new.left < cell.right:
+            if 'r' in blockers and last.left >= cell.right and new.left < cell.right:
                 new.left = cell.right
-            if last.bottom <= cell.top and new.bottom > cell.top:
+            if 't' in blockers and last.bottom <= cell.top and new.bottom > cell.top:
                 self.resting = True
                 new.bottom = cell.top
                 self.dy = 0
-            if last.top >= cell.bottom and new.top < cell.bottom:
+            if 'b' in blockers and last.top >= cell.bottom and new.top < cell.bottom:
                 new.top = cell.bottom
                 self.dy = 0
 
