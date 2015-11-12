@@ -2,6 +2,9 @@ __author__ = 'alGatto'
 
 import pygame
 import player
+import tmx
+import pytmx
+
 
 class Game(object):
     def main(self, screen):
@@ -11,18 +14,12 @@ class Game(object):
 
         background =pygame.image.load('ressources/level1back.png') #charge l'image de fond
 
-        sprites = pygame.sprite.Group()
-        #sprites.add(background)
-        self.player = player.Player(sprites)
-        self.walls = pygame.sprite.Group()
-        block = pygame.image.load('ressources/brick1.png')
-        for x in range(0, self.width, 16):
-            for y in range(0, self.height, 16):
-                if x in (0, self.width-16) or y in (0, self.height-16):
-                    wall = pygame.sprite.Sprite(self.walls)
-                    wall.image = block
-                    wall.rect = pygame.rect.Rect((x, y), block.get_size())
-        sprites.add(self.walls)
+        self.tilemap = tmx.load('levelMap/map.tmx', screen.get_size())
+
+        self.sprites = tmx.SpriteLayer()
+        start_cell = self.tilemap.layers['triggers'].find('player')[0]
+        self.player = player.Player((start_cell.px, start_cell.py), self.sprites)
+        self.tilemap.layers.append(self.sprites)
 
         while 1:
             dt = clock.tick(30)
@@ -34,9 +31,9 @@ class Game(object):
 
 
 
-            sprites.update(dt / 1000., self)
+            self.tilemap.update(dt / 1000., self)
             screen.blit(background, (0, 0)) # place le fond
-            sprites.draw(screen)
+            self.tilemap.draw(screen)
             pygame.display.flip()
 
 if __name__ == '__main__':

@@ -4,10 +4,10 @@ import pygame
 
 class Player(pygame.sprite.Sprite):
     """Classe du personnage principal"""
-    def __init__(self, *groups):
+    def __init__(self, location, *groups):
         super(Player, self).__init__(*groups)
         self.image = pygame.image.load('ressources/Ducky-static.png') #charge l'image du personnage
-        self.rect = pygame.rect.Rect((320,240), self.image.get_size())
+        self.rect = pygame.rect.Rect(location, self.image.get_size())
 
         self.resting = False
         self.dy = 0 #delta y
@@ -31,8 +31,7 @@ class Player(pygame.sprite.Sprite):
         # Bloquer la sortie d'écran du perso
         new = self.rect
         self.resting = False
-        for cell in pygame.sprite.spritecollide(self, game.walls, False):
-            cell = cell.rect
+        for cell in game.tilemap.layers['triggers'].collide(new, 'blockers'):
             if last.right <= cell.left and new.right > cell.left:
                 new.right = cell.left
             if last.left >= cell.right and new.left < cell.right:
@@ -44,3 +43,5 @@ class Player(pygame.sprite.Sprite):
             if last.top >= cell.bottom and new.top < cell.bottom:
                 new.top = cell.bottom
                 self.dy = 0
+
+        game.tilemap.set_focus(new.x, new.y) #suivre le perso
