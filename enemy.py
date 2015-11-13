@@ -4,7 +4,7 @@ import pygame
 import tmx
 
 class Enemy(pygame.sprite.Sprite):
-    image = pygame.image.load('enemy.png')
+    image = pygame.image.load('levelMap/enemy.png')
     def __init__(self, location, *groups):
         super(Enemy, self).__init__(*groups)
         self.rect = pygame.rect.Rect(location, self.image.get_size())

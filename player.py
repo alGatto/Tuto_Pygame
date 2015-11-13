@@ -7,11 +7,15 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, location, *groups):
         super(Player, self).__init__(*groups)
         self.image = pygame.image.load('ressources/Ducky-static.png') #charge l'image du personnage
+        self.right_image = self.image
+        self.left_image = pygame.image.load('ressources/Ducky-left.png')
         self.rect = pygame.rect.Rect(location, self.image.get_size())
 
         self.resting = False
         self.dy = 0 #delta y
         self.is_dead = False
+
+        self.direction = 1
 
     def update(self, dt, game):
         last = self.rect.copy() #copie de la position
@@ -19,8 +23,12 @@ class Player(pygame.sprite.Sprite):
         key = pygame.key.get_pressed()
         if key[pygame.K_LEFT]: #si la touche flèche gauche est appuyée
             self.rect.x -= 300 * dt
+            self.image = self.left_image #change l'image du perso
+            self.direction = -1 #change lea valeur de la direction du perso
         if key[pygame.K_RIGHT]: #si la touche flèche droite est appuyée
             self.rect.x += 300 * dt
+            self.image = self.right_image #change l'image du perso
+            self.direction = 1
         if key[pygame.K_UP]:
             self.rect.y -= 800 * dt
 

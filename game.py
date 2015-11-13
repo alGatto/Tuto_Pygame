@@ -3,7 +3,6 @@ __author__ = 'alGatto'
 import pygame
 import player
 import tmx
-import pytmx
 import enemy
 
 
@@ -19,12 +18,12 @@ class Game(object):
 
         self.sprites = tmx.SpriteLayer()
         start_cell = self.tilemap.layers['triggers'].find('player')[0]
-        self.player = player.Player((start_cell.px, start_cell.py), self.sprites)
+        self.player = player.Player((start_cell.px, start_cell.py - 400), self.sprites)
         self.tilemap.layers.append(self.sprites)
 
         self.enemies = tmx.SpriteLayer()
-        for enemy in self.tilemap.layers['triggers'].find('enemy'):
-            enemy.Enemy((enemy.px, enemy.py), self.enemies)
+        for self.enemy in self.tilemap.layers['triggers'].find('enemy'):
+            enemy.Enemy((self.enemy.px, self.enemy.py), self.enemies)
         self.tilemap.layers.append(self.enemies)
 
         while 1:
