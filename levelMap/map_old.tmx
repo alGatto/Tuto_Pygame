@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="32" tileheight="32" nextobjectid="71">
+ <tileset firstgid="1" source="tmx/examples/tiles.tsx"/>
+ <tileset firstgid="2" source="tmx/examples/triggers.tsx"/>
+ <tileset firstgid="8" name="box" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="Tuto_Pygame/levelMap/box.jpg" width="32" height="32"/>
+ </tileset>
+ <layer name="set" width="100" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2EFuwkAQRUH7/pfO6u2QiGLZNJV+kvcUI4Yvn8dxnMCjJFgEQwkWwVCCRTCUYBEMJVgEQwkWwVC/tUzemJM+y9UEi2AowSIY6oplyh225zErwVCCRTDU7qtZCRbBUIJFMNTuq1kJFsFQgkUw1O6rWQkWwVCCRTDU7qtZCRbBUIJFMNTuq1kJFsFQgkUw1O6rWQkWwVCCRTDU7qtZCRbBUIJFMNQT++ruu27PY1aCoQSLYKg77o4nd9i0rXc1wSIYSrAIhtr3V7MSLIKhBItgqCvvr949T/Ufz2NygqEEi2CoV5a/3E2f/E708/i2BEM9/b97x+9LOw/hUfoBsG8BKg==
+  </data>
+ </layer>
+ <objectgroup color="#a40b00" name="triggers">
+  <properties>
+   <property name="platform" value=""/>
+  </properties>
+  <object id="1" name="tlrb" x="0" y="32" width="32" height="1536">
+   <properties>
+    <property name="blockers" value="tlrb"/>
+   </properties>
+  </object>
+  <object id="2" name="tlrb" x="3168" y="32" width="32" height="1536">
+   <properties>
+    <property name="blockers" value="tlrb"/>
+   </properties>
+  </object>
+  <object id="3" name="tlrb" x="32" y="0" width="3135" height="32">
+   <properties>
+    <property name="blockers" value="tlrb"/>
+   </properties>
+  </object>
+  <object id="4" name="tlrb" x="32" y="1568" width="3136" height="32">
+   <properties>
+    <property name="blockers" value="tlrb"/>
+   </properties>
+  </object>
+  <object id="5" name="platform" x="320" y="224" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="6" name="platform" x="480" y="320" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="7" name="platform" x="320" y="416" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="8" name="platform" x="480" y="512" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="9" name="platform" x="320" y="608" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="10" name="platform" x="480" y="704" width="384" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="11" name="platform" x="320" y="800" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="12" name="platform" x="1025" y="896" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="13" name="platform" x="320" y="992" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="14" name="platform" x="480" y="1088" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="15" name="platform" x="800" y="1088" width="160" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="16" name="platform" x="638" y="1183" width="163" height="33">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="17" name="platform" x="479" y="1279" width="160" height="33">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="18" name="platform" x="321" y="1376" width="416" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="19" name="platform" x="160" y="1472" width="448" height="32">
+   <properties>
+    <property name="blockers" value="t"/>
+   </properties>
+  </object>
+  <object id="20" name="tlrb" x="864" y="1535" width="287" height="33">
+   <properties>
+    <property name="blockers" value="tlrb"/>
+   </properties>
+  </object>
+  <object id="21" name="tlrb" x="3136" y="1152" width="32" height="32">
+   <properties>
+    <property name="blockers" value="tlrb"/>
+   </properties>
+  </object>
+  <object id="22" gid="2" x="64" y="1536" width="32" height="32"/>
+  <object id="23" gid="3" x="480" y="1472" width="32" height="32"/>
+  <object id="24" gid="3" x="608" y="1376" width="32" height="32"/>
+  <object id="25" gid="3" x="352" y="1376" width="32" height="32"/>
+  <object id="26" gid="3" x="224" y="1472" width="32" height="32"/>
+  <object id="27" gid="5" x="128" y="1472" width="32" height="32"/>
+  <object id="28" gid="5" x="608" y="1472" width="32" height="32"/>
+  <object id="29" gid="5" x="736" y="1376" width="32" height="32"/>
+  <object id="30" gid="5" x="288" y="1376" width="32" height="32"/>
+  <object id="31" gid="3" x="607" y="1085" width="32" height="32"/>
+  <object id="32" gid="6" x="1239" y="1067" width="32" height="32"/>
+  <object id="33" gid="6" x="1171" y="1091" width="32" height="32"/>
+  <object id="34" gid="6" x="921" y="1068" width="32" height="32"/>
+  <object id="35" gid="6" x="732" y="1380" width="32" height="32"/>
+  <object id="36" gid="6" x="732" y="1380" width="32" height="32"/>
+  <object id="37" gid="6" x="941" y="928" width="32" height="32"/>
+  <object id="38" gid="5" x="960" y="1088" width="32" height="32"/>
+  <object id="39" gid="5" x="449" y="1089" width="32" height="32"/>
+  <object id="40" gid="3" x="865" y="1088" width="32" height="32"/>
+  <object id="41" gid="5" x="677" y="1279" width="32" height="32"/>
+  <object id="42" gid="5" x="451" y="1276" width="32" height="32"/>
+  <object id="43" gid="3" x="543" y="1276" width="32" height="32"/>
+  <object id="44" gid="3" x="397" y="988" width="32" height="32"/>
+  <object id="45" gid="5" x="483" y="991" width="32" height="32"/>
+  <object id="46" gid="5" x="293" y="993" width="32" height="32"/>
+  <object id="47" gid="5" x="1185" y="899" width="32" height="32"/>
+  <object id="48" gid="5" x="995" y="899" width="32" height="32"/>
+  <object id="49" gid="3" x="1088" y="897" width="32" height="32"/>
+  <object id="50" gid="5" x="36" y="608" width="32" height="32"/>
+  <object id="51" gid="5" x="659" y="604" width="32" height="32"/>
+  <object id="52" gid="3" x="491" y="607" width="32" height="32"/>
+  <object id="53" gid="3" x="267" y="611" width="32" height="32"/>
+  <object id="54" gid="3" x="136" y="611" width="32" height="32"/>
+  <object id="55" gid="3" x="641" y="704" width="32" height="32"/>
+  <object id="56" gid="3" x="431" y="319" width="32" height="32"/>
+  <object id="57" gid="3" x="249" y="375" width="32" height="32"/>
+  <object id="58" gid="3" x="613" y="415" width="32" height="32"/>
+  <object id="59" gid="5" x="653" y="417" width="32" height="32"/>
+  <object id="60" gid="5" x="651" y="383" width="32" height="32"/>
+  <object id="61" gid="5" x="648" y="319" width="32" height="32"/>
+  <object id="62" gid="5" x="204" y="373" width="32" height="32"/>
+  <object id="63" gid="5" x="204" y="324" width="32" height="32"/>
+  <object id="64" gid="5" x="216" y="419" width="32" height="32"/>
+  <object id="65" gid="5" x="480" y="702" width="32" height="32"/>
+  <object id="66" gid="5" x="864" y="703" width="32" height="32"/>
+ </objectgroup>
+</map>
