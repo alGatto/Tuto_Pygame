@@ -6,9 +6,9 @@ class Player(pygame.sprite.Sprite):
     """Classe du personnage principal"""
     def __init__(self, location, *groups):
         super(Player, self).__init__(*groups)
-        self.image = pygame.image.load('ressources/Ducky-static.png') #charge l'image du personnage
+        self.image = pygame.image.load('ressources/Ducky-static.png') #charge l'image du personnage pour la direction droite
         self.right_image = self.image
-        self.left_image = pygame.image.load('ressources/Ducky-left.png')
+        self.left_image = pygame.image.load('ressources/Ducky-left.png') #charge l'image du perso pour la direction gauche
         self.rect = pygame.rect.Rect(location, self.image.get_size())
 
         self.resting = False

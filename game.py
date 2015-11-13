@@ -4,6 +4,7 @@ import pygame
 import player
 import tmx
 import enemy
+import score
 
 
 class Game(object):
@@ -38,6 +39,7 @@ class Game(object):
 
             self.tilemap.update(dt / 1000., self)
             screen.blit(background, (0, 0)) # place le fond
+            screen.blit(score.text,(0,0))
             self.tilemap.draw(screen)
             pygame.display.flip()
 
