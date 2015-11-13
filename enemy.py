@@ -2,6 +2,7 @@ __author__ = 'alGatto'
 
 import pygame
 import tmx
+import life
 
 class Enemy(pygame.sprite.Sprite):
     image = pygame.image.load('levelMap/enemy.png')
@@ -20,4 +21,7 @@ class Enemy(pygame.sprite.Sprite):
             self.direction *= -1
             break
         if self.rect.colliderect(game.player.rect):
-            game.player.is_dead = True
+            if life.Life().nb_life >= 1:
+                life.Life().nb_life -= 1
+            else:
+                game.player.is_dead = True

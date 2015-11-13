@@ -5,6 +5,7 @@ import player
 import tmx
 import enemy
 import score
+import life
 
 
 class Game(object):
@@ -38,9 +39,12 @@ class Game(object):
 
 
             self.tilemap.update(dt / 1000., self)
+
             screen.blit(background, (0, 0)) # place le fond
-            screen.blit(score.text,(0,0))
+
             self.tilemap.draw(screen)
+            screen.blit(score.Score().text,(0,0))
+            screen.blit(life.Life().image,(900,0))
             pygame.display.flip()
 
             if self.player.is_dead: #si le perso meurt
