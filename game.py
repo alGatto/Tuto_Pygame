@@ -28,6 +28,8 @@ class Game(object):
             enemy.Enemy((self.enemy.px, self.enemy.py), self.enemies)
         self.tilemap.layers.append(self.enemies)
 
+        self.jump = pygame.mixer.Sound('sound/jump.wav')
+
         while 1:
             dt = clock.tick(30)
             for event in pygame.event.get():
@@ -44,7 +46,9 @@ class Game(object):
 
             self.tilemap.draw(screen)
             screen.blit(score.Score().text,(0,0))
-            screen.blit(life.Life().image,(900,0))
+
+            life.Life().display(screen,life.Life().image)
+
             pygame.display.flip()
 
             if self.player.is_dead: #si le perso meurt

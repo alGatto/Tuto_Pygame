@@ -34,6 +34,7 @@ class Player(pygame.sprite.Sprite):
 
         #Gravité
         if self.resting and key[pygame.K_SPACE]:
+            game.jump.play()
             self.dy = - 500
         self.dy = min(400, self.dy + 40)
 
