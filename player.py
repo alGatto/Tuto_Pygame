@@ -1,6 +1,7 @@
 __author__ = 'alGatto'
 
 import pygame
+import bullet
 
 class Player(pygame.sprite.Sprite):
     """Classe du personnage principal"""
@@ -17,6 +18,9 @@ class Player(pygame.sprite.Sprite):
 
         self.direction = 1
 
+        #nombre de shoot possible avant que la balle ne se supprime
+        self.gun_cooldown = 0
+
     def update(self, dt, game):
         last = self.rect.copy() #copie de la position
 
@@ -31,6 +35,17 @@ class Player(pygame.sprite.Sprite):
             self.direction = 1
         if key[pygame.K_UP]:
             self.rect.y -= 800 * dt
+
+        #Tirer des projectiles
+        if key[pygame.K_LSHIFT] and not self.gun_cooldown:
+            if self.direction > 0:
+                #on crée une balle dans la direction du joueur
+                bullet.Bullet(self.rect.midright, 1, game.sprites)
+            else:
+                bullet.Bullet(self.rect.midleft, -1, game.sprites)
+            self.gun_cooldown = 1
+
+        self.gun_cooldown = max(0, self.gun_cooldown - dt)
 
         #Gravité
         if self.resting and key[pygame.K_SPACE]:
