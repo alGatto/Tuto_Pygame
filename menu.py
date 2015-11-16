@@ -2,7 +2,7 @@
 __author__ = 'Juliette'
 import pygame
 import sys
-import DuckApprovesGame
+import game
 
 pygame.init()
 
@@ -125,8 +125,7 @@ class GameMenu():
 if __name__ == "__main__":
     def start():
         print("Démarrer !")
-        DuckApprovesGame.App().on_execute()
-
+        game.Game().main(screen)
 
     def show_rules():
         print("Règles !")
@@ -135,7 +134,7 @@ if __name__ == "__main__":
         print("Meilleure score")
  
     # Screen
-    screen = pygame.display.set_mode((640, 480), 0, 32)
+    screen = pygame.display.set_mode((1024, 683))
 
     menu_items = ('Jouer', 'Palmares', 'Regles','Quit')
     functions = {'Jouer':start,

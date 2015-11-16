@@ -36,4 +36,3 @@ class Enemy(pygame.sprite.Sprite):
 
 
 LIFE = life.Life()
-GAME = game.Game()
