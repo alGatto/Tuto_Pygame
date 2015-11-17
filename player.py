@@ -44,6 +44,7 @@ class Player(pygame.sprite.Sprite):
             else:
                 bullet.Bullet(self.rect.midleft, -1, game.sprites)
             self.gun_cooldown = 1
+            game.shoot.play()
 
         self.gun_cooldown = max(0, self.gun_cooldown - dt)
 

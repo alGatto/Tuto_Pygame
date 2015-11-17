@@ -31,8 +31,8 @@ class Enemy(pygame.sprite.Sprite):
             new_life = LIFE.nb_life
             LIFE.update(new_life)
             print(LIFE.nb_life)
-            #if LIFE.nb_life == 0:
-                #game.player.is_dead = True
+            if LIFE.nb_life == 0:
+                game.player.is_dead = True
 
 
 LIFE = life.Life()

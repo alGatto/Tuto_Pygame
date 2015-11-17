@@ -29,6 +29,8 @@ class Game(object):
         self.tilemap.layers.append(self.enemies)
 
         self.jump = pygame.mixer.Sound('sound/jump.wav')
+        self.shoot = pygame.mixer.Sound('sound/shoot.wav')
+        self.explosion = pygame.mixer.Sound('sound/explosion.wav')
 
         while 1:
             dt = clock.tick(30)

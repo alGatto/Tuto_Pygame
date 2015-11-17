@@ -19,6 +19,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.x += self.direction * 400 * dt
 
         if pygame.sprite.spritecollide(self, game.enemies, True):
-            #self.new.score = 15
-            #score.Score().update(self.new_score)
+            game.explosion.play()
+            score.Score().update()
+            print(score.Score().score)
             self.kill()

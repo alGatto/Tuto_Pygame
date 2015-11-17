@@ -1,6 +1,7 @@
 __author__ = 'dylan'
 
 import pygame
+import game
 
 black = (0,0,0) # on definit une couleur
 pygame.font.init()
@@ -16,7 +17,9 @@ class Score():
         self.text = self.font.render("Score : "+str(self.score), True, black)
         """on affiche notre score"""
 
-
+    def update(self):
+        self.score += 15
+        print(str(self.score) + " fonction update")
 
 
 
