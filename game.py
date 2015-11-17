@@ -10,6 +10,7 @@ import life
 
 class Game(object):
     def main(self, screen):
+
         clock = pygame.time.Clock()
 
         self.size = self.width, self.height = 1024, 683

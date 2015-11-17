@@ -60,6 +60,7 @@ class GameMenu():
  
         self.mouse_is_visible = True
         self.cur_item = None
+        self.background = pygame.image.load('ressources/Fond_menu.png')
 
     def set_keyboard_selection(self, key):
         """Marque l'item choisis via les touches haut et bas"""
@@ -83,7 +84,7 @@ class GameMenu():
                         self.cur_item = 0
  
         self.items[self.cur_item].set_italic(True)
-        self.items[self.cur_item].set_font_color(RED)
+        self.items[self.cur_item].set_font_color(BLACK)
  
         # Vérifie si la touche Entrer ou Espace est appuyée
         if key == pygame.K_SPACE or key == pygame.K_RETURN:
@@ -114,6 +115,7 @@ class GameMenu():
  
             # Redessine le background
             self.screen.fill(self.bg_color)
+            self.screen.blit(self.background, (0, 0))
 
             for item in self.items:
 #               if self.mouse_is_visible:
