@@ -1,0 +1,16 @@
+Quel est la bonne façon d'importer un fichier ?
+emport ?
+import ?
+once_import ?
+Quel est l'interpréteur de python ?
+Python ?
+IDLE ?
+Prypy ?
+Sous quelle format sont afficher les fichiers python ?
+.python ?
+.py ?
+.pyth ?
+Comment définir une fonction ?
+func mafonction() ?
+func mafonction(): ?
+def mafonction(): ?
