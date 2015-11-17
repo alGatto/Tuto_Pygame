@@ -4,7 +4,7 @@ import pygame
 import tmx
 import life
 import player
-import game
+import game, quiz
 
 class Enemy(pygame.sprite.Sprite):
     image = pygame.image.load('levelMap/enemy-right.png')
@@ -33,6 +33,7 @@ class Enemy(pygame.sprite.Sprite):
             print(LIFE.nb_life)
             if LIFE.nb_life == 0:
                 game.player.is_dead = True
+                quiz.Quiz().quiz()
 
 
 LIFE = life.Life()
